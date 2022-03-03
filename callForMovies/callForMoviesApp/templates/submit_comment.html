@@ -1,0 +1,156 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Submit Comment</title>-->
+<!--</head>-->
+<!--<body>-->
+
+
+<!--<div class="container">-->
+<!--  <div class="row">-->
+<!--    <div class="w3-col l8 s12">-->
+<!--     <div class="w3-container w3-white w3-margin w3-padding-large">-->
+<!--        <div class="w3-center">-->
+<!--          <h3>{{ movie.name }}</h3>-->
+<!--        </div>-->
+
+<!--        <div class="w3-justify">-->
+<!--          <img src={{ movie.image }}  alt="photo" style="width:100%" class="w3-padding-16">-->
+<!--          <h5>{{ moive.description}}... <span class="w3-opacity">May 2, 2016</span></h5>-->
+<!--          <p class="w3-clear"></p>-->
+
+<!--        </div>-->
+<!--      </div>-->
+
+
+<!--    <div class="col-md-8 card mb-4  mt-3 ">-->
+<!--      <div class="card-body">-->
+        <!-- comments -->
+<!--        <h2>{{ comments.count }} comments</h2>-->
+
+<!--        {% for comment in movie.comments.all %}-->
+<!--        <div class="comments" style="padding: 10px;">-->
+<!--          <p class="font-weight-bold">-->
+<!--            {{ comment.name }}-->
+<!--            <span class=" text-muted font-weight-normal">-->
+<!--              {{ comment.date_added }}-->
+<!--            </span>-->
+<!--          </p>-->
+<!--          <p>{{ comment.text }}</p>-->
+<!--          <p>{{ comment.text_french}}</p>-->
+<!--          <p>{{ comment.text_spanish }}</p>-->
+<!--          <p>{{ comment.text_german }}</p>-->
+<!--        </div>-->
+<!--        {% endfor %}-->
+<!--      </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+
+
+
+<!--    <form method = "post" enctype="multipart/form-data">-->
+<!--        {% csrf_token %}-->
+<!--        {{ comment_form}}-->
+<!--        <button type="submit">Upload</button>-->
+<!--    </form>-->
+
+<!--    </div>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+<!------------------------------------------------------------------------------>
+
+<html>
+<title>{{ movie.name }}</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
+body {font-family: "Open Sans"}
+</style>
+<body class="w3-light-grey">
+
+<div class="w3-content" style="max-width:1600px">
+
+  <div class="w3-container w3-row w3-padding w3-border ">
+
+    <!-- Blog entries -->
+    <div class="w3-container w3-col l8 s12 ">
+
+        <div class="w3-container w3-white w3-margin w3-padding-large w3-center">
+            <div class="w3-center"><h3>{{ movie.name }}</h3></div>
+            <div class="w3-justify">
+              <img src={{ movie.image }}  alt="photo" style="width:100%" class="w3-padding-16">
+              <h5>{{ movie.description}}... <span class="w3-opacity">May 2, 2016</span></h5>
+              <p class="w3-clear"></p>
+            </div>
+        </div>
+
+
+        <div class="col-md-8 card mb-4  mt-3 ">
+            <div class="card-body ">
+
+                <h2>{{ comments.count }} comments</h2>
+
+                {% for comment in movie.comments.all %}
+                    {% if comment.valid %}
+                    <div class="comments w3-white" style="padding: 10px;">
+                      <p class="font-weight-bold">
+                        <strong>{{ comment.name }}</strong>
+                        <span class=" text-muted font-weight-normal">
+                          {{ comment.date_added }}
+                        </span>
+                      </p>
+                      <p>{{ comment.text }}</p>
+                      <p>{{ comment.text_french}}</p>
+                      <p>{{ comment.text_spanish }}</p>
+                      <p>{{ comment.text_german }}</p>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+
+        <form method = "post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ comment_form}}
+            <button  class="w3-button w3-black"  type="submit">Upload</button>
+        </form>
+
+    </div>
+
+
+    <!-- END BLOG ENTRIES -->
+    </div>
+<script>
+var my_button = document.getElementById("myH1");
+
+my_button.style.class = "w3-button w3-black";
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

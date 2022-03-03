@@ -1,0 +1,32 @@
+{
+  "completed": "2022-02-24T09:08:01.602535Z",
+  "periodic": true,
+  "started": "2022-02-24T09:07:41.739167Z",
+  "versions": [
+    {
+      "filename": "pip-22.0.3-py3-none-any.whl",
+      "found_date": "2022-02-24T09:07:42.065912Z",
+      "release_date": "2022-02-03T08:44:11.000000Z"
+    },
+    {
+      "filename": "pip-22.0.2-py3-none-any.whl",
+      "found_date": "2022-02-24T09:07:47.237213Z",
+      "release_date": "2022-01-30T22:46:51.000000Z"
+    },
+    {
+      "filename": "pip-22.0.1-py3-none-any.whl",
+      "found_date": "2022-02-24T09:07:50.429911Z",
+      "release_date": "2022-01-30T19:43:48.000000Z"
+    },
+    {
+      "filename": "pip-22.0-py3-none-any.whl",
+      "found_date": "2022-02-24T09:07:54.398913Z",
+      "release_date": "2022-01-30T12:34:58.000000Z"
+    },
+    {
+      "filename": "pip-21.3.1-py3-none-any.whl",
+      "found_date": "2022-02-24T09:07:57.559924Z",
+      "release_date": "2021-10-22T15:57:09.000000Z"
+    }
+  ]
+}
